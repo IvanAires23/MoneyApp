@@ -18,6 +18,13 @@ export default function AddTransaction() {
         Alert.alert("Bom dia")
     }
 
+    const handleCurrencyChange = (text) => {
+        const formattedValue = text.replace(/\D/g, "")
+        const numberValue = formattedValue ? parseFloat(formattedValue) / 100 : 0;
+
+        setForm({ ...text, value: numberValue })
+    }
+
     return (
         <View style={globalStyles.screenContainer}>
             <ScrollView style={globalStyles.content}>
@@ -33,8 +40,11 @@ export default function AddTransaction() {
                     <View>
                         <Text>Valor</Text>
                         <TextInput
-                            value={form.value}
-                            onChangeText={e => setForm({ ...form, value: e })}
+                            value={form.value.toLocaleString("pt-BR", {
+                                style: "currency",
+                                currency: "BRL"
+                            })}
+                            onChangeText={handleCurrencyChange}
                             keyboardType="numeric"
                             style={globalStyles.input} />
                     </View>
