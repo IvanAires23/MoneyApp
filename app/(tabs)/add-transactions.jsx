@@ -1,10 +1,12 @@
-import { useRef, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useContext, useRef, useState } from "react";
 import { Alert, Keyboard, KeyboardAvoidingView, ScrollView, StyleSheet, TouchableWithoutFeedback, View } from "react-native";
 import Button from "../../components/Button";
 import CategoryPicker from "../../components/CategoryPicker";
 import CurrencyInput from "../../components/CurrencyInput";
 import DataPicker from "../../components/DataPicker";
 import DescriptionInput from "../../components/DescriptionInput";
+import { MoneyContext } from "../../context/GlobalState";
 import { globalStyles } from "../../styles/globalStyles";
 
 export default function AddTransaction() {
@@ -17,13 +19,26 @@ export default function AddTransaction() {
     }
 
     const [form, setForm] = useState(initialForm)
+    const [transactions, setTransactions] = useContext(MoneyContext)
     const inputValueRef = useRef()
 
-    const addTransaction = () => {
-        Alert.alert("Bom dia")
+    const setAsyncStorage = async (data) => {
+        try {
+            await AsyncStorage.setItem("transactions", JSON.stringify(data))
+        } catch (e) {
+            console.log(e)
+        }
     }
 
+    const addTransaction = async () => {
+        const newTransaction = { id: transactions.length + 1, ...form }
+        const updatedTransactions = [...transactions, newTransaction]
+        setTransactions(updatedTransactions)
+        setForm(initialForm)
 
+        await setAsyncStorage(updatedTransactions)
+        Alert.alert("Transação adiconada com sucesso")
+    }
 
     return (
         <KeyboardAvoidingView style={globalStyles.screenContainer}>
