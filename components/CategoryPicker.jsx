@@ -12,7 +12,7 @@ export default function CategoryPicker({ form, setForm }) {
                             value={form.category}
                             onChangeText={e => setForm({ ...form, category: e })}
                             style={globalStyles.input} />*/}
-            <View style={style.picker}>
+            <View style={styles.picker}>
                 <Picker
                     selectedValue={form.category}
                     onValueChange={itemValue => setForm({ ...form, category: itemValue })}
@@ -43,7 +43,7 @@ export default function CategoryPicker({ form, setForm }) {
     )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     picker: {
         display: "flex",
         justifyContent: "center",

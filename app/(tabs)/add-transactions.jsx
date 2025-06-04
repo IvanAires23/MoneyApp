@@ -8,6 +8,7 @@ import DataPicker from "../../components/DataPicker";
 import DescriptionInput from "../../components/DescriptionInput";
 import { MoneyContext } from "../../context/GlobalState";
 import { globalStyles } from "../../styles/globalStyles";
+import { categories } from "../../constants/categories"
 
 export default function AddTransaction() {
 
@@ -15,7 +16,7 @@ export default function AddTransaction() {
         description: "",
         value: 0,
         date: new Date(),
-        category: "Renda"
+        category: categories.income.name
     }
 
     const [form, setForm] = useState(initialForm)
