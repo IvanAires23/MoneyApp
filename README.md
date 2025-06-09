@@ -35,9 +35,7 @@ A simple mobile app for personal finance management, built with **React Native**
 
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.dev/)
-- [React Navigation](https://reactnavigation.org/) (for screen navigation)
-- [Styled Components](https://styled-components.com/) (optional, if used)
-- Other helpful libraries (e.g., `date-fns` for date handling or `react-native-vector-icons` for icons, if applicable)
+- [Styled Components](https://styled-components.com/)
 
 ## 📦 Installation & Running
 
