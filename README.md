@@ -58,11 +58,11 @@ A simple mobile app for personal finance management, built with **React Native**
 📸 Screenshots
 (Add screenshots of your app if available. Example:)
 
-Transaction Form
+### Transaction Form![Transaction Form](./assets/images/formulario.jpg)
 
-Transaction History
+### Transaction History![Transaction History](./assets/images/transacoes.jpg)
 
-Financial Summary
+### Financial Summary![Summary](./assets/images/resumo.jpg)
 
 📈 Possible Future Improvements
 Filter transactions by date or category
