@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MoneyAPP",
-    "slug": "MoneyAPP",
+    "slug": "money",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -40,6 +40,13 @@
     },
     "updates": {
       "enabled": false
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "fc1d616a-1747-4525-b0c3-05c73e072ed5"
+      }
+    },
+    "owner": "ivanaires3"
   }
 }
